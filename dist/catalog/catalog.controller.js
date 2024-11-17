@@ -25,8 +25,8 @@ let CatalogController = class CatalogController {
     async create(createCatalogDto) {
         return this.catalogService.create(createCatalogDto);
     }
-    async update(id, updateCatalogDto) {
-        return this.catalogService.update(id, updateCatalogDto);
+    async updateCatalog(id, updateData) {
+        await this.catalogService.update(id, updateData);
     }
     async deleteCatalog(id) {
         if (!id) {
@@ -56,7 +56,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
-], CatalogController.prototype, "update", null);
+], CatalogController.prototype, "updateCatalog", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),

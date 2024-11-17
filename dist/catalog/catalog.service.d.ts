@@ -5,6 +5,6 @@ export declare class CatalogService {
     constructor(catalogModel: Model<CatalogDocument>);
     findAll(): Promise<Catalog[]>;
     create(createCatalogDto: Partial<Catalog>): Promise<Catalog>;
-    update(id: string, updateCatalogDto: Partial<Catalog>): Promise<Catalog>;
+    update(id: string, updateData: any): Promise<void>;
     delete(id: string): Promise<void>;
 }

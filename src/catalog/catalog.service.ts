@@ -17,8 +17,6 @@ export class CatalogService {
             indexedAt: catalog.indexedAt,
         }));
     }
-    
-    
 
     // Create a catalog
     async create(createCatalogDto: Partial<Catalog>): Promise<Catalog> {
@@ -27,8 +25,18 @@ export class CatalogService {
     }
 
     // Update a catalog
-    async update(id: string, updateCatalogDto: Partial<Catalog>): Promise<Catalog> {
-        return this.catalogModel.findByIdAndUpdate(id, updateCatalogDto, { new: true }).exec();
+    async update(id: string, updateData: any): Promise<void> {
+        const { primary } = updateData;
+
+        if (primary) {
+            // Ensure only one catalog is primary
+            await this.catalogModel.updateMany({ primary: true }, { primary: false }).exec();
+        }
+
+        const result = await this.catalogModel.findByIdAndUpdate(id, updateData, { new: true }).exec();
+        if (!result) {
+            throw new NotFoundException(`Catalog with ID ${id} not found`);
+        }
     }
 
     // Delete a catalog

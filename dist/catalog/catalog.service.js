@@ -34,8 +34,15 @@ let CatalogService = class CatalogService {
         const createdCatalog = new this.catalogModel(createCatalogDto);
         return createdCatalog.save();
     }
-    async update(id, updateCatalogDto) {
-        return this.catalogModel.findByIdAndUpdate(id, updateCatalogDto, { new: true }).exec();
+    async update(id, updateData) {
+        const { primary } = updateData;
+        if (primary) {
+            await this.catalogModel.updateMany({ primary: true }, { primary: false }).exec();
+        }
+        const result = await this.catalogModel.findByIdAndUpdate(id, updateData, { new: true }).exec();
+        if (!result) {
+            throw new common_1.NotFoundException(`Catalog with ID ${id} not found`);
+        }
     }
     async delete(id) {
         if (!(0, mongoose_2.isValidObjectId)(id)) {

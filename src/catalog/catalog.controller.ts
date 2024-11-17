@@ -20,11 +20,8 @@ export class CatalogController {
 
     // Update a catalog
     @Put(':id')
-    async update(
-        @Param('id') id: string,
-        @Body() updateCatalogDto: Partial<Catalog>,
-    ): Promise<Catalog> {
-        return this.catalogService.update(id, updateCatalogDto);
+    async updateCatalog(@Param('id') id: string, @Body() updateData: any): Promise<void> {
+        await this.catalogService.update(id, updateData);
     }
 
     // Delete a catalog
