@@ -38,10 +38,7 @@ Make sure you have the following installed:
 ## Installation and Setup
 ```bash
 # Clone this repository.
-$ git clone https://github.com/ofirbenesh/catalog-dashboard.git
-
-# For running the backend - go to repository
-$ gh repo clone ofirbenesh/backend
+$ git clone https://github.com/ofirbenesh/backend.git
 
 # Install dependencies:
 $ npm install
@@ -60,7 +57,7 @@ $ npm run load-data
 $ cd backend
 $ npm start
 
-# For running the Client - go back to this repository
+# For running the Client - go back to the frontend repository
 $ cd catalog-dashboard
 $ npm start
 ```
