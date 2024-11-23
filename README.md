@@ -2,18 +2,17 @@
 
 The backend for the **Catalog Dashboard** application is built with **NestJS** and uses **MongoDB** for database storage. It provides a REST API for managing catalogs, including CRUD operations, and includes a script to load mock catalogs into the database for development or testing purposes.
 
-To main repository: https://github.com/ofirbenesh/catalog-dashboard.git
+- To main repository: https://github.com/ofirbenesh/catalog-dashboard.git
 ---
 
 ## Features
 - RESTful API to manage catalogs (Add, Delete, Update, View).
-- MongoDB for data storage.
 - `loadMockData.ts` script to populate the database with sample catalogs.
 - Modular and scalable codebase using **NestJS**.
   
 <img width="681" alt="image" src="https://github.com/user-attachments/assets/ca59b456-2642-4f03-a0db-2f38de867308">
 
- - mongoDB:
+- MongoDB for data storage:
 <img width="681" alt="image" src="https://github.com/user-attachments/assets/7cb46cd0-d696-425c-820a-fbc7969abd4f">
 
 
