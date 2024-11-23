@@ -35,4 +35,4 @@ export default async function loadMockCatalogs() {
 }
 
 // Run the script
-loadMockCatalogs();
+// loadMockCatalogs();

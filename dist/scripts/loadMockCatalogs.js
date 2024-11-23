@@ -5,7 +5,7 @@ const mongoose_1 = require("mongoose");
 const mongoose_2 = require("mongoose");
 const catalog_schema_1 = require("../catalog/schemas/catalog.schema");
 const mockCatalogs = [
-    { name: 'interior design', primary: true },
+    { name: 'Interior design', primary: true },
     { name: 'Clothing', primary: false },
     { name: 'Jewelry', primary: false },
 ];
@@ -25,5 +25,4 @@ async function loadMockCatalogs() {
         console.error('Error loading mock catalogs:', error);
     }
 }
-loadMockCatalogs();
 //# sourceMappingURL=loadMockCatalogs.js.map
