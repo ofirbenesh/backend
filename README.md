@@ -2,6 +2,7 @@
 
 The backend for the **Catalog Dashboard** application is built with **NestJS** and uses **MongoDB** for database storage. It provides a REST API for managing catalogs, including CRUD operations, and includes a script to load mock catalogs into the database for development or testing purposes.
 
+To main repository: https://github.com/ofirbenesh/catalog-dashboard.git
 ---
 
 ## Features
