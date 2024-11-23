@@ -2,25 +2,19 @@
 
 The backend for the **Catalog Dashboard** application is built with **NestJS** and uses **MongoDB** for database storage. It provides a REST API for managing catalogs, including CRUD operations, and includes a script to load mock catalogs into the database for development or testing purposes.
 
----
-
-## Table of Contents
-1. [Features](#features)
-2. [Technologies Used](#technologies-used)
-3. [Prerequisites](#prerequisites)
-4. [Installation and Setup](#installation-and-setup)
-5. [API Endpoints](#api-endpoints)
-6. [Development](#development)
-7. [Mock Data Loading](#mock-data-loading)
-8. [Screenshots](#screenshots)
-
+- To main repository: https://github.com/ofirbenesh/catalog-dashboard.git
 ---
 
 ## Features
 - RESTful API to manage catalogs (Add, Delete, Update, View).
-- MongoDB for data storage.
 - `loadMockData.ts` script to populate the database with sample catalogs.
 - Modular and scalable codebase using **NestJS**.
+  
+<img width="681" alt="image" src="https://github.com/user-attachments/assets/ca59b456-2642-4f03-a0db-2f38de867308">
+
+- MongoDB for data storage:
+<img width="681" alt="image" src="https://github.com/user-attachments/assets/7cb46cd0-d696-425c-820a-fbc7969abd4f">
+
 
 ---
 
@@ -42,21 +36,33 @@ Make sure you have the following installed:
 ---
 
 ## Installation and Setup
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd backend
+```bash
+# Clone this repository.
+$ git clone https://github.com/ofirbenesh/catalog-dashboard.git
 
-2. Install dependencies:
-   ```npm install
+# For running the backend - go to repository
+$ gh repo clone ofirbenesh/backend
 
-3. Set up the environment variables: Create a .env file in the backend directory with the following:
-   CONNECTION_STRING=mongodb://localhost:27017/catalog-dashboard
-   PORT=3000
+# Install dependencies:
+$ npm install
+$ npm install mongoose
+$ npm install --save-dev @types/mongoose
 
-5. OPTIONAL: if you want to pre-load several catalogs, run the command:
-   ```npm run load-data
+# make sure you are connected to MongoDB
+"connectionString": "mongodb://localhost:27017/"
 
-4. run the backend:
-  ```cd backend
-  ```npm start
+# Optional: if you want to preload Mock data into the DB to see how the table looks like with catalogs
+# run the script:
+$ cd backend/src/scripts
+$ npm run load-data
+
+# start the server.
+$ cd backend
+$ npm start
+
+# For running the Client - go back to this repository
+$ cd catalog-dashboard
+$ npm start
+```
+The frontend will run on http://localhost:3001.
+The backend will run on http://localhost:3000.
